@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    container_name: bot_server_app_2
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "8082:8082"
+    # depends_on:
+    #   - postgres
+    environment:
+      Bot_Token: 1990206478:AAEGm4ZhQFMakHOn6iqHWVrebPekFCR6Vvs
+  #     DATABASE_URL: postgres://todoapp@postgres/todos
+  # postgres:
+  #   image: healthcheck/postgres:alpine
+  #   environment:
+  #     POSTGRES_USER: todoapp
+  #     POSTGRES_DB: todos
